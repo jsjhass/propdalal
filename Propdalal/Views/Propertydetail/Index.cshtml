@@ -1,0 +1,71 @@
+﻿@model Propdalal.Models.Project
+<table class="table table-striped">
+    <tr>
+        <td>Title:</td>
+        <td>@Model.Title</td>
+    </tr>
+    <tr>
+        <td>Description:</td>
+        <td>@Model.Description</td>
+    </tr>
+    <tr>
+        <td>Area square feet:</td>
+        <td>@Model.SqureFitArea</td>
+    </tr>
+    <tr>
+        <td>Price:</td>
+        <td>@Model.Price</td>
+    </tr>
+    <tr>
+        <td>Address:</td>
+        <td>@Model.Address</td>
+    </tr>
+    <tr>
+        <td>Contact:</td>
+        <td>@Model.Contact</td>
+    </tr>
+    <tr>
+        <td>Bedroom:</td>
+        <td>@Model.BedRoom</td>
+    </tr>
+    <tr>
+        <td>Bathroom:</td>
+        <td>@Model.BathRoom</td>
+    </tr>
+    <tr>
+        <td>Kithen:</td>
+        <td>@Model.Kitchen</td>
+    </tr>
+    <tr>
+        <td>Balconi:</td>
+        <td>@Model.Balconi</td>
+    </tr>
+    @if (Model.TV == true) { 
+    <tr>
+        <td>TV:</td>
+        <td>Yes</td>
+    </tr>
+    }
+    @if (Model.Ac == true) { 
+    <tr>
+        <td>AC:</td>
+        <td>Yes</td>
+    </tr>
+    }
+    @if (Model.Sofa == true) { 
+    <tr>
+        <td>Sofa:</td>
+        <td>Yes</td>
+    </tr>
+    }
+    @if (Model.Lift == true)
+    {
+        <tr>
+            <td>Lift:</td>
+            <td>Yes</td>
+        </tr>
+    }
+</table>
+@Styles.Render("~/css/bootstrap.min.css")
+<script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>

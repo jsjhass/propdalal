@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Propdalal.Models.Project>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-section">
+    <h2>Property List</h2>
+
+    <div class="container">
+        <div class="row listings-items-wrapper">
+
+            @foreach (var i in Model)
+            {
+                <div class="col-md-12 listing-single-item">
+                    <div class="item-inner">
+                        <div class="desc-box">
+                            <ul class="slide-item-features item-features">
+                                <li><span>@i.Title</span></li>
+                                <li><span>@i.Description</span></li>
+                                <li><span>@i.Price</span></li>
+                                <li><span>@Html.ActionLink("Detail", "Index", "Propertydetail", new { id = @i.Id }, new { @class = "gray-btn fancybox" })</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

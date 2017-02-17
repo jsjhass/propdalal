@@ -1,0 +1,103 @@
+﻿@model Propdalal.Models.Project
+@{
+    ViewBag.Title = "Submitsale";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-section">
+    <div class="container" style="font-size:12px;">
+        <h2>Please submit your sale detail</h2>
+            @using (@Html.BeginForm("Submitsale", "Propertylist", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="control-group">
+                    <label class="control-label">Title</label>
+                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Description</label>
+                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Price</label>
+                    @Html.TextBoxFor(m => m.Price, new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Squarefeet Area</label>
+                    @Html.TextBoxFor(m => m.SqureFitArea, new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Bedroom</label>
+                    @Html.TextBoxFor(m => m.BedRoom, new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Bathroom</label>
+                    @Html.TextBoxFor(m => m.BathRoom, new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">kitchen</label>
+                    @Html.TextBoxFor(m => m.Kitchen, new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Balconi</label>
+                    @Html.TextBoxFor(m => m.Balconi, new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Address</label>
+                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Contact</label>
+                    @Html.TextBoxFor(m => m.Contact, new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Rent or Sale</label>
+                    @Html.DropDownList("Rentsale", ViewBag.Rentsale as SelectList, "--Select--", new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Property Type</label>
+                    @Html.DropDownList("Proptype", ViewBag.Proptype as SelectList, "--Select--", new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Location</label>
+                    @Html.DropDownList("Location", ViewBag.Location as SelectList, "--Select--", new { @class = "form-control", required = "required" })
+                </div>
+                <div class="control-group">
+                    <label class="control-label">TV</label>
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            @Html.CheckBoxFor(m => m.TV)
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">AC</label>
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            @Html.CheckBoxFor(m => m.Ac)
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Sofa</label>
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            @Html.CheckBoxFor(m => m.Sofa)
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Lift</label>
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            @Html.CheckBoxFor(m => m.Lift)
+                        </label>
+                    </div>
+                </div>
+                <input type="submit" class="yellow-btn" value="Submit" />
+            }
+        </div>
+</div>
+@if (TempData["Submitsale"] != null)
+{
+    <script type="text/javascript">alert('@TempData["Submitsale"]');</script>
+}

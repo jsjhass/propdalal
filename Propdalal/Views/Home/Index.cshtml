@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+ <div class="search-section">
+    <div class="container">
+        @using (Html.BeginForm("Index", "PropertyList",FormMethod.Post))
+        {
+            <div class="select-wrapper select-smaill" id='select-rent'>
+                <p>
+                    Rent or Sale
+                </p>
+                @Html.DropDownList("Rentsale", ViewBag.Rentsale as SelectList, "--Select--", new { @class = "elselect", required="required" })              
+
+            </div>
+            <div class="select-wrapper select-big" id='select-property'>
+                <p>
+                    Property type
+                </p>
+                @Html.DropDownList("Proptype", ViewBag.Proptype as SelectList, "--Select--", new { @class = "elselect", required = "required" })
+
+            </div>
+            <div class="select-wrapper select-big">
+                <p>
+                    Locations
+                </p>
+                @Html.DropDownList("Location", ViewBag.Location as SelectList, "--Select--", new { @class = "elselect", required = "required" })
+
+            </div>
+            <input type="submit" value="search" class='yellow-btn'>
+        }
+    </div>
+</div>
