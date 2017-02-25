@@ -1812,3 +1812,19 @@ select,
 textarea {
     max-width: 280px;
 }
+#tblProperty tr {
+    border:1px solid #B1B1B1;
+    border-collapse:collapse;
+}
+#tblProperty tr td{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:16px;
+    padding:10px;
+    min-width:400px;
+}
+#tblProperty tr:nth-child(2n){
+    background-color:#17ebb7;
+}
+#tblProperty tr:nth-child(2n+1){
+    background-color:#f2e717;
+}
